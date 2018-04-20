@@ -1,0 +1,30 @@
+<div *ngIf="!isComputer">
+  <button mat-button (click)="selectGesture(handGestureType.Rock)">
+    <img src="/assets/images/rock-left.svg" />
+  </button>
+
+  <button mat-button (click)="selectGesture(handGestureType.Paper)">
+    <img src="/assets/images/paper-left.svg" />
+  </button>
+
+  <button mat-button (click)="selectGesture(handGestureType.Scissor)">
+    <img src="/assets/images/scissor-left.svg" />
+  </button>
+</div>
+<div *ngIf="choice!==null && !checkIfUndefined()">
+    <span *ngIf="!isComputer; else computerTemplate">
+      You have choose
+    </span>
+    <ng-template #computerTemplate>
+      <span>
+        Computer choose
+      </span>
+    </ng-template>
+    <div [ngSwitch]="choice">
+      <img *ngSwitchCase="handGestureType.Rock" src="/assets/images/rock-left.svg" />
+      <img *ngSwitchCase="handGestureType.Paper" src="/assets/images/paper-left.svg" />
+      <img *ngSwitchCase="handGestureType.Scissor" src="/assets/images/scissor-left.svg" />
+      <div *ngSwitchDefault></div>
+    </div>
+</div>
+

@@ -1,8 +1,8 @@
-<p>
-  player-gesture works!
+<p *ngIf="!playerObject.computer">
+ Player {{playerObject.id}} choose your weapon
 </p>
-
-<pre>
-
-  {{player | json}}
-</pre>
+<select-hand-gesture
+  [choice]="gesture"
+  [isComputer]="playerObject.computer"
+  (onSelectGesture)="onSelectGesture($event)">
+</select-hand-gesture>

@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PlayerGestureComponent } from './player-gesture.component';
+import { SelectHandGestureComponent } from './select-hand-gesture/select-hand-gesture.component';
+import { AppComponent } from '../app.component';
 
 describe('PlayerGestureComponent', () => {
   let component: PlayerGestureComponent;

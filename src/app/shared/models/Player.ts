@@ -14,7 +14,7 @@ export class Player {
         this.winner = state;
     }
 
-    get winState {
+    get winState() {
       return this.winner;
     }
 }

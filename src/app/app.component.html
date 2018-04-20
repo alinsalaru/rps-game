@@ -1,7 +1,30 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div>
   <h1>
     {{ title }}
   </h1>
 </div>
-<player-gesture [isComputer]="false"></player-gesture>
+
+<div class="main-section">
+  <div class="flex-container">
+    <player-gesture
+      [player]="player1"
+      (selectHandGesture)="processGesture($event)"></player-gesture>
+  </div>
+
+  <div class="flex-container">
+    <player-gesture
+      [gesture]="choiceComputerPlayer"
+      [player]="player2"></player-gesture>
+  </div>
+</div>
+
+<div class="flex-container red" *ngIf="showWinState()">
+  <div [ngSwitch]="validateWin(choicePlayer1, choiceComputerPlayer)">
+    <span *ngSwitchCase="gameStateType.Win">You win!</span>
+    <span *ngSwitchCase="gameStateType.Lose">You Lost!</span>
+    <span *ngSwitchCase="gameStateType.Tie">It's a tie!</span>
+    <span *ngSwitchDefault></span>
+  </div>
+</div>
+
+<game-history [gameHistoryCollection]="gameHistoryCollection"></game-history>

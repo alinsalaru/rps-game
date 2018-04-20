@@ -1,0 +1,43 @@
+
+
+<mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Game History
+        </mat-panel-title>
+        <mat-panel-description>
+          Check here for game history
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <span *ngIf="gameHistoryCollection?.length === 0">
+        You haven't played any games yet.
+      </span>
+      <div class="flex" *ngFor="let handHistory of gameHistoryCollection">
+          <span class="date">{{handHistory.time | date:'mediumTime'}}:</span>
+          <span class="result" [ngSwitch]="handHistory.gameState">
+              <span *ngSwitchCase="gameStateType.Win">You won!</span>
+              <span *ngSwitchCase="gameStateType.Lose">You Lost!</span>
+              <span *ngSwitchCase="gameStateType.Tie">It was a tie!</span>
+              <span *ngSwitchDefault></span>
+          </span>
+          <span>
+            You had
+          </span>
+          <span [ngSwitch]="handHistory.hands[0]">
+              <img *ngSwitchCase="handGestureType.Rock" src="/assets/images/rock-left.svg" />
+              <img *ngSwitchCase="handGestureType.Paper" src="/assets/images/paper-left.svg" />
+              <img *ngSwitchCase="handGestureType.Scissor" src="/assets/images/scissor-left.svg" />
+              <div *ngSwitchDefault></div>
+          </span>.
+          Computer had
+          <span [ngSwitch]="handHistory.hands[1]">
+              <img *ngSwitchCase="handGestureType.Rock" src="/assets/images/rock-left.svg" />
+              <img *ngSwitchCase="handGestureType.Paper" src="/assets/images/paper-left.svg" />
+              <img *ngSwitchCase="handGestureType.Scissor" src="/assets/images/scissor-left.svg" />
+              <div *ngSwitchDefault></div>
+          </span>.
+        </div>
+
+    </mat-expansion-panel>
+</mat-accordion>

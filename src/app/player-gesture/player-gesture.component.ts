@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Player } from '../shared/models/Player';
 import { WinState } from '../shared/enums/winner';
+import { HandGesture } from '../shared/enums/handgesture';
 
 @Component({
   selector: 'player-gesture',
@@ -9,16 +10,19 @@ import { WinState } from '../shared/enums/winner';
 })
 
 export class PlayerGestureComponent implements OnInit {
-  @Input() isComputer: boolean;
-  private player: Player;
+  @Input('player') playerObject?: Player;
+  @Input() gesture: HandGesture;
+  @Output() selectHandGesture = new EventEmitter<{player: Player, gesture: HandGesture}>();
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit() {
-    this.player = new Player(1, this.isComputer);
-    this.player.winState = WinState.Win;
-    console.log(this.player.computer,'isComputer');
-    console.log(WinState[this.player.winState], 'winState');
+  }
+
+  onSelectGesture(gesture: HandGesture) {
+    //console.log(gesture,'gesture to player-gesture');
+    this.selectHandGesture.emit({player: this.playerObject, gesture: gesture});
   }
 
 }

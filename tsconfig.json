@@ -9,11 +9,18 @@
     "experimentalDecorators": true,
     "target": "es5",
     "typeRoots": [
-      "node_modules/@types"
+      "node_modules/@types",
+      "src/@types"
     ],
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "assets/*": [
+        "src/assets/*"
+       ]
+    }
   }
 }

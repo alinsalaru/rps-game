@@ -1,5 +1,5 @@
 export enum WinState {
-    Win,
-    Tie,
-    Lost
+  Win,
+  Tie,
+  Lost
 }
