@@ -11,7 +11,8 @@
     <img src="/assets/images/scissor-left.svg" />
   </button>
 </div>
-<div *ngIf="choice!==null && !checkIfUndefined()">
+
+<div *ngIf="checkChoiceValidity()">
     <span *ngIf="!isComputer; else computerTemplate">
       You have choose
     </span>

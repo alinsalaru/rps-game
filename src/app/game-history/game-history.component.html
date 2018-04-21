@@ -1,5 +1,3 @@
-
-
 <mat-accordion>
     <mat-expansion-panel>
       <mat-expansion-panel-header>
@@ -10,10 +8,11 @@
           Check here for game history
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <span *ngIf="gameHistoryCollection?.length === 0">
+
+      <span *ngIf="gameHistory?.length === 0">
         You haven't played any games yet.
       </span>
-      <div class="flex" *ngFor="let handHistory of gameHistoryCollection">
+      <div class="flex" *ngFor="let handHistory of gameHistory">
           <span class="date">{{handHistory.time | date:'mediumTime'}}:</span>
           <span class="result" [ngSwitch]="handHistory.gameState">
               <span *ngSwitchCase="gameStateType.Win">You won!</span>

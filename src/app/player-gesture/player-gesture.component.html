@@ -1,8 +1,8 @@
-<p *ngIf="!playerObject.computer">
- Player {{playerObject.id}} choose your weapon
+<p *ngIf="!player.computer">
+ Player {{player.id}} choose your weapon
 </p>
 <select-hand-gesture
   [choice]="gesture"
-  [isComputer]="playerObject.computer"
+  [isComputer]="player.computer"
   (onSelectGesture)="onSelectGesture($event)">
 </select-hand-gesture>
