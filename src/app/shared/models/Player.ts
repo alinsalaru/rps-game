@@ -1,5 +1,3 @@
-import { WinState } from "../enums/winner";
-
 export class Player {
     id: number;
     computer: boolean;

@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Player } from '../shared/models/Player';
-import { WinState } from '../shared/enums/winner';
 import { HandGesture } from '../shared/enums/handgesture';
 
 @Component({

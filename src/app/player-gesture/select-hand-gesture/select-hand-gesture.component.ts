@@ -14,7 +14,7 @@ export class SelectHandGestureComponent {
   @Output() onSelectGesture = new EventEmitter<HandGesture>();
 
   checkChoiceValidity() {
-    return this.choice!==null && typeof(this.choice) !== 'undefined')
+    return this.choice!==null && typeof(this.choice) !== 'undefined';
   }
 
   selectGesture(gesture: HandGesture) {
