@@ -12,6 +12,7 @@ import { IPlayedGame } from './shared/interfaces/IPlayedGame';
 
 export class AppComponent {
   title: string = 'Rock, Paper, Scissors!';
+  playLocal: boolean = false;
   player1: Player;
   player2: Player;
   choicePlayer1: HandGesture = null;

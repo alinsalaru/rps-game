@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatCardModule, MatExpansionModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatCardModule, MatExpansionModule, MatSlideToggleModule, MatSliderModule} from '@angular/material';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -20,7 +20,9 @@ import { GameHistoryComponent } from './game-history/game-history.component';
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSlideToggleModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
