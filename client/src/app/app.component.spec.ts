@@ -28,8 +28,4 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
-  // it('should validate if human player won against computer', () => {
-  //     const comp = new AppComponent();
-  //     expect(comp.validateWin(HandGesture.Rock,HandGesture.Paper)).toBe(GameState.Win);
-  // })
 });
