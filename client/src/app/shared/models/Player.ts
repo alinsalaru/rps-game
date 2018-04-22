@@ -1,9 +1,9 @@
 export class Player {
     id: number;
-    computer: boolean;
+    isComputer: boolean;
 
-    constructor(_id: number, _computer: boolean) {
+    constructor(_id: number, _isComputer: boolean) {
         this.id = _id;
-        this.computer = _computer;
+        this.isComputer = _isComputer;
     }
 }

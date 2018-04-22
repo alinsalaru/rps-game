@@ -51,10 +51,6 @@ export class AppComponent {
 
   }
 
-  getComputerMoveRemote() {
-      return this.apiService.getComputerMove();
-  }
-
   private validateWin(hand1: HandGesture, hand2: HandGesture) {
 
     if(hand1 === HandGesture.Rock && hand2 === HandGesture.Scissor) {

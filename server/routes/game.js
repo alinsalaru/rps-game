@@ -3,6 +3,7 @@ var router = express.Router();
 
 var JSONdb = require('simple-json-db');
 var db = new JSONdb('./db.json');
+var HttpStatus = require('http-status-codes');
 
 function findGame(games, gameId) {
   return games.find(function(game) {
@@ -35,7 +36,7 @@ router.post('/', function(req,res){
   db.JSON({"games": games});
   db.sync();
 
-  res.json(201,"I've added your game");
+  res.json(HttpStatus.CREATED,"I've added your game");
 });
 
 module.exports = router;
